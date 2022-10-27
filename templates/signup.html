@@ -14,29 +14,34 @@
 
 <body>
     <header class="w-full fixed top-0 left-0 py-[20px] text-[#fff] bg-[#134e4a]">
-        <div class="flex justify-between items-center mx-auto md:w-[80%] lg:w-[80%]">
+        <div class="flex justify-between w-[90%] items-center mx-auto md:w-[80%] lg:w-[80%]">
             <div class="font-[700] text-[21px]">BlogDaily</div>
-            <div class="flex space-x-[20px] justify-between items-center">
+            <div class="md:flex hidden space-x-[20px] justify-between items-center">
                 <a href="{{ url_for('login') }}">
                     <div class="font-[500] cursor-pointer text-[16px]">Login</div>
                 </a>
-                <div
-                    class="ca font-[700] cursor-pointer bg-[#047857] py-[8px] px-[15px] rounded-full w-fit text-[16px]">
-                    Create Account
-                </div>
+                <a href={{ url_for('signup') }}>
+                    <div
+                        class="font-[700] cursor-pointer bg-[#047857] py-[8px] px-[15px] rounded-full w-fit text-[16px]">
+                        Create Account
+                    </div>
+                </a>
             </div>
+            <!--mobile view drop-->
+            <!--end mobile view drop-->
         </div>
     </header>
     <!--end header-->
-    <div class="mx-auto md:w-[80%] lg:w-[80%]">
+    <div class="mx-auto w-[90%] md:w-[80%] lg:w-[80%]">
         {% for message in messages %}
         <div class="w-full mt-[100px] bg-[#6ee7b7] rounded-[5px] font-[500] text-[16px] text-[#fff]">{{ message }}</div>
         {% endfor %}
-        <div class="font-[600] text-[25px] text-[#000] mt-[130px]">Create an Account</div>
+        <div class="font-[600] text-[25px] text-[#000] mt-[60%] md:mt-[130px]">Create an Account</div>
         <!--messages-->
         {% with errors = get_flashed_messages(category_filter=["error"]) %}
         {% if errors %}
-        <div id="error" class="bg-[#dc2626] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-[50%]">
+        <div id="error"
+            class="bg-[#dc2626] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-full md:w-[50%]">
             <div id="cancelerror" class="close font-[600] text-[16px]">×</div>
             <div>
                 {%- for msg in errors %}
@@ -50,7 +55,7 @@
         {% with success = get_flashed_messages(category_filter=["success"]) %}
         {% if success %}
         <div id="success"
-            class="bg-[#4ade80] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-[50%]">
+            class="bg-[#4ade80] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-full md:w-[50%]">
             <div id="cancel" class="close font-[600] text-[16px]">×</div>
             <div>
                 {%- for msg in success %}
@@ -67,20 +72,20 @@
             <label for="name" class="font-[500] text-[14px] text-[#000]">Name</label>
             <div>
                 <input autocomplete="no" type="text" name="name" id="name" placeholder="Enter your username"
-                    class="w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
+                    class="w-full md:w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
             </div>
             <!--email-->
             <div class="mt-[9px]"><label for="email" class="font-[500] text-[14px] text-[#000]">Email</label></div>
             <div>
                 <input autocomplete="no" type="text" name="email" id="email" placeholder="Enter your email address"
-                    class="w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
+                    class="w-full md:w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
             </div>
             <!--password-->
             <div class="mt-[9px]"><label for="password" class="font-[500] text-[14px] text-[#000]">Password</label>
             </div>
             <div>
                 <input type="password" name="password" id="password" placeholder="Enter your password"
-                    class="w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
+                    class="w-full md:w-[50%] border-[1px] border-[#000] rounded-[5px] py-[10px] px-[15px] mt-[5px] focus:outline-none">
             </div>
             <!--end form inputs-->
             <!--submit-->

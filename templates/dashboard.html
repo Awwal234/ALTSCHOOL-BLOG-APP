@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <div class="flex items-top">
+    <div class="md:flex md:items-top">
         <!--side nav for web UI-->
-        <div class="fixed top-0 h-full left-0 md:w-[230px] bg-[#134e4a] py-[30px]">
+        <div class="fixed z-[9999] top-0 w-full md:h-full left-0 md:w-[230px] bg-[#134e4a] py-[30px]">
             <div class="w-full space-x-[20px] flex items-center py-[10px] px-[25px]">
                 <div class="text-[#fff]">
                     <div class="rounded-full w-6 h-6 bg-[#fff]"></div>
@@ -27,7 +27,7 @@
             </div>
             <!--end first good day-->
             <!--post tag-->
-            <div class="w-full mt-[60px] space-x-[20px] flex items-center py-[10px] px-[50px]">
+            <div class="w-full hidden md:block mt-[60px] space-x-[20px] flex items-center py-[10px] px-[50px]">
                 <a href="/" class="space-x-[20px] flex items-center w-full">
                     <div class="text-[#fff]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -43,7 +43,7 @@
             </div>
             <!--end post tag-->
             <!--setting tag-->
-            <div class="w-full mt-[60px] space-x-[20px] flex items-center py-[10px] px-[50px]">
+            <div class="w-full mt-[60px] hidden md:flex space-x-[20px] flex items-center py-[10px] px-[50px]">
                 <div class="text-[#fff]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
                         stroke="currentColor" class="w-4 h-4">
@@ -57,7 +57,7 @@
             </div>
             <!--end setting tag-->
             <!--logout tag-->
-            <div class="absolute bottom-0 mb-[50px]">
+            <div class="absolute hidden md:block bottom-0 mb-[50px]">
                 <div class="w-full mt-[60px] space-x-[20px] flex items-center py-[10px] px-[50px]">
                     <div class="text-[#fff]">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
@@ -74,10 +74,60 @@
                 </div>
             </div>
             <!--end logout tag-->
+            <!--mobile selection-->
+            <div class="md:hidden px-[30px] flex items-center space-x-[2px]">
+                <div class="w-full space-x-[20px] flex items-center">
+                    <a href="/" class="space-x-[20px] flex items-center w-full">
+                        <div class="text-[#fff]">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M7.5 7.5h-.75A2.25 2.25 0 004.5 9.75v7.5a2.25 2.25 0 002.25 2.25h7.5a2.25 2.25 0 002.25-2.25v-7.5a2.25 2.25 0 00-2.25-2.25h-.75m0-3l-3-3m0 0l-3 3m3-3v11.25m6-2.25h.75a2.25 2.25 0 012.25 2.25v7.5a2.25 2.25 0 01-2.25 2.25h-7.5a2.25 2.25 0 01-2.25-2.25v-.75" />
+                            </svg>
+                        </div>
+                        <div>
+                            <div class="font-[500] text-[14px] text-[#fff]">Post</div>
+                        </div>
+                    </a>
+                </div>
+                <!--end post tag-->
+                <!--setting tag-->
+                <div class="w-full space-x-[20px] flex items-center">
+                    <div class="text-[#fff]">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="w-4 h-4">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                d="M11.42 15.17L17.25 21A2.652 2.652 0 0021 17.25l-5.877-5.877M11.42 15.17l2.496-3.03c.317-.384.74-.626 1.208-.766M11.42 15.17l-4.655 5.653a2.548 2.548 0 11-3.586-3.586l6.837-5.63m5.108-.233c.55-.164 1.163-.188 1.743-.14a4.5 4.5 0 004.486-6.336l-3.276 3.277a3.004 3.004 0 01-2.25-2.25l3.276-3.276a4.5 4.5 0 00-6.336 4.486c.091 1.076-.071 2.264-.904 2.95l-.102.085m-1.745 1.437L5.909 7.5H4.5L2.25 3.75l1.5-1.5L7.5 4.5v1.409l4.26 4.26m-1.745 1.437l1.745-1.437m6.615 8.206L15.75 15.75M4.867 19.125h.008v.008h-.008v-.008z" />
+                        </svg>
+                    </div>
+                    <div>
+                        <div class="font-[500] text-[14px] text-[#fff]">Setting</div>
+                    </div>
+                </div>
+                <!--end setting tag-->
+                <!--logout tag-->
+                <div class="">
+                    <div class="w-full space-x-[20px] flex items-center">
+                        <div class="text-[#fff]">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                                stroke="currentColor" class="w-4 h-4">
+                                <path stroke-linecap="round" stroke-linejoin="round"
+                                    d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+                            </svg>
+                        </div>
+                        <a href="{{ url_for('logout') }}">
+                            <div>
+                                <div class="font-[500] text-[14px] text-[#fff]">Logout</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!--end mobile selection-->
         </div>
         <!--end side nav-->
         <!--begin side real content-->
-        <div class="ml-[260px] pb-[30px] md:w-[65%] lg:w-[80%]">
+        <div class="md:ml-[260px] w-[90%] pb-[30px] md:w-[65%] lg:w-[80%] mt-[120px] md:mt-[0px] lg:mt-[0px]">
             <div class="py-[40px] sticky h-fit w-full">
                 <a href="{{ url_for('create' ,id = user.id) }}">
                     <div
@@ -95,18 +145,20 @@
             </div>
             <!--user_posts-->
             <div class="mt-[60px] w-full py-[10px] px-[25px]">
-                <div class="font-[700] text-[#000] text-[35px]">All User posts.</div>
-                <div class="font-[400] text-[#a8a29e] text-[15px]">Hey {{ user.name }}, you can only place action on
+                <div class="font-[700] text-[#000] text-[25px] md:text-[35px]">All User posts.</div>
+                <div class="font-[400] text-[#a8a29e] text-[12px] md:text-[15px]">Hey {{ user.name }}, you can only
+                    place action on
                     your post and not others.</div>
                 <!--post-->
                 <div class="flex flex-row flex-wrap mt-[30px] items-center w-full">
                     {% if user %}
                     {% for blog in blogs %}
                     <div
-                        class="bg-[#f9fafb] h-[130px] mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-[45%] rounded-[6px]">
+                        class="bg-[#f9fafb] h-fit md:h-[130px] mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-full md:w-[45%] rounded-[6px]">
                         <div class="font-[700] text-[15px] text-[#134e4a]">{{ blog.title }}</div>
                         <div class="font-[500] text-[15px] text-[#000] mt-[10px]">{{ blog.content }}</div>
-                        <div class="font-[500] text-[15px] text-[#134e4a] mt-[5px]">Created at: {{ blog.date }} by
+                        <div class="font-[500] text-[12px] md:text-[15px] text-[#134e4a] mt-[5px]">Created at: {{
+                            blog.date }} by
                             {{ blog.author }}</div>
                         <div class="mt-[5px] text-right w-full">
                             <div class="flex space-x-[7px] float-right">
