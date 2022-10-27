@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Puritan:wght@400;700&display=swap" rel="stylesheet">
+    <title>{% block title %}BlogDaily |CreateBlog{% endblock %}</title>
+</head>
+
+<body>
+    <div class="mt-[80px] mx-auto md:w-[80%] lg:w-[80%]">
+        <div>
+            <div class="font-[700] text-[30px] text-[#134e4a]">Update Your Post</div>
+            <div class="font-[400] text-[14px] leading-[17px] text-[#d6d3d1]">
+                what&apos;s in your mind {{ user.name }}
+            </div>
+        </div>
+
+        <form action="{{ url_for('update' ,id = blog.id) }}" method="POST">
+            <div class="mt-[20px] font-[400] text-[14px] text-[#000]"><label for="title">Title</label></div>
+            <div class="mt-[10px]">
+                <input type="text" name="title" id="title"
+                    class="w-[50%] border-[1px] border-[#d6d3d1] rounded-[5px] py-[10px] px-[15px]">
+            </div>
+            <!--content-->
+            <div class="mt-[20px] font-[400] text-[14px] text-[#000]"><label for="content">Content</label></div>
+            <div class="mt-[10px]">
+                <textarea name="content" rows="6" id="content"
+                    class="w-[50%] border-[1px] border-[#d6d3d1] rounded-[5px]">
+                </textarea>
+            </div>
+            <!--end content-->
+            <button type="submit"
+                class="mt-[10px] font-[600] text-[#fff] rounded-[5px] leading-[17px] py-[8px] px-[13px] text-[17px] bg-[#134e4a]">
+                Update post
+            </button>
+            <!--end btn-->
+        </form>
+        <!--end form-->
+    </div>
+</body>
+
+<style>
+    body {
+        font-family: 'Puritan', sans-serif;
+    }
+</style>
+
+</html>

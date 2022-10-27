@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Puritan:wght@400;700&display=swap" rel="stylesheet">
+    <title>{% block title %}BlogDaily{% endblock %}</title>
+</head>
+
+<body>
+    <header class="w-full fixed top-0 left-0 py-[20px] text-[#fff] bg-[#134e4a]">
+        <div class="flex justify-between items-center mx-auto md:w-[80%] lg:w-[80%]">
+            <div class="font-[700] text-[21px]">BlogDaily</div>
+            <div class="flex space-x-[20px] justify-between items-center">
+                <a href="{{ url_for('login') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">Login</div>
+                </a>
+                <a href={{ url_for('signup') }}>
+                    <div
+                        class="font-[700] cursor-pointer bg-[#047857] py-[8px] px-[15px] rounded-full w-fit text-[16px]">
+                        Create Account
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+    <!--end header-->
+    <!--main content-->
+    <div class="mx-auto md:w-[80%] lg:w-[80%] mt-[130px]">
+        <div class="font-[600] text-[18px] text-[#115e59]"><span class="font-[700] text-[22px]">Hey, </span>you like
+            what you are seeing ?
+        </div>
+        <div class="font-[500] flex items-center text-[16px] text-[#a8a29e] leading-[17px]">
+            <div>Become a blogger at BlogDaily</div>
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-4 h-4">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                        d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                </svg>
+            </div>
+        </div>
+        <!--end advert-->
+        <!--post form db-->
+        <!--user_posts-->
+        <div class="mt-[60px] w-full py-[10px]">
+            <div class="font-[700] text-[#000] text-[35px]">All posts.</div>
+            <!--post-->
+            <div class="flex flex-row flex-wrap mt-[30px] items-center w-full">
+                {% for blog in blogs %}
+                <div
+                    class="bg-[#f9fafb] h-[130px] mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-[45%] rounded-[6px]">
+                    <div class="font-[700] text-[15px] text-[#134e4a]">{{ blog.title }}</div>
+                    <div class="font-[500] text-[15px] text-[#000] mt-[10px]">{{ blog.content }}</div>
+                    <div class="font-[500] text-[15px] text-[#134e4a] mt-[5px]">Created at: {{ blog.date }} by {{
+                        blog.author }}</div>
+                </div>
+                {% endfor %}
+            </div>
+            <!--end post-->
+        </div>
+        <!--end user_posts-->
+        <!--end post-->
+    </div>
+    <!--end main content-->
+</body>
+
+<style>
+    body {
+        font-family: 'Puritan', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #000;
+    }
+</style>
+
+</html>
