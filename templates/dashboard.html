@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/static/js/script.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Puritan:wght@400;700&display=swap" rel="stylesheet">
@@ -127,7 +128,7 @@
         </div>
         <!--end side nav-->
         <!--begin side real content-->
-        <div class="md:ml-[260px] w-[90%] pb-[30px] md:w-[65%] lg:w-[80%] mt-[120px] md:mt-[0px] lg:mt-[0px]">
+        <div class="md:ml-[260px] w-[95%] pb-[30px] md:w-[65%] lg:w-[80%] mt-[120px] md:mt-[0px] lg:mt-[0px]">
             <div class="py-[40px] sticky h-fit w-full">
                 <a href="{{ url_for('create' ,id = user.id) }}">
                     <div
@@ -145,6 +146,38 @@
             </div>
             <!--user_posts-->
             <div class="mt-[60px] w-full py-[10px] px-[25px]">
+                <!--begin for success-->
+                {% with success = get_flashed_messages(category_filter=["success"]) %}
+                {% if success %}
+                <div id="success"
+                    class="bg-[#4ade80] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-full md:w-[50%]">
+                    <div id="close" class="close cursor-pointer font-[600] text-[16px]" href="javascript:void(0)">×
+                    </div>
+                    <div>
+                        {%- for msg in success %}
+                        <span>{{ msg }}, {{ user.name }}</span>
+                        {% endfor -%}
+                    </div>
+                </div>
+                {% endif %}
+                {% endwith %}
+                <!--end for success-->
+                <!--failed deleted message-->
+                {% with error = get_flashed_messages(category_filter=["error"]) %}
+                {% if error %}
+                <div id="error"
+                    class="bg-red-900 flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-full md:w-[50%]">
+                    <div id="close" class="close cursor-pointer font-[600] text-[16px]" href="javascript:void(0)">×
+                    </div>
+                    <div>
+                        {%- for msg in error %}
+                        <span>{{ msg }}, {{ user.name }}</span>
+                        {% endfor -%}
+                    </div>
+                </div>
+                {% endif %}
+                {% endwith %}
+                <!--end failed deleted message-->
                 <div class="font-[700] text-[#000] text-[25px] md:text-[35px]">All User posts.</div>
                 <div class="font-[400] text-[#a8a29e] text-[12px] md:text-[15px]">Hey {{ user.name }}, you can only
                     place action on
@@ -154,9 +187,11 @@
                     {% if user %}
                     {% for blog in blogs %}
                     <div
-                        class="bg-[#f9fafb] h-fit md:h-[130px] mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-full md:w-[45%] rounded-[6px]">
+                        class="bg-[#f9fafb] h-fit md:h-fit mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-full md:w-[45%] rounded-[6px]">
                         <div class="font-[700] text-[15px] text-[#134e4a]">{{ blog.title }}</div>
-                        <div class="font-[500] text-[15px] text-[#000] mt-[10px]">{{ blog.content }}</div>
+                        <div class="content font-[500] overflow-scroll h-fit w-full text-[15px] text-[#000] mt-[10px]">
+                            <div class="overflow-scroll w-fit">{{ blog.content }}</div>
+                        </div>
                         <div class="font-[500] text-[12px] md:text-[15px] text-[#134e4a] mt-[5px]">Created at: {{
                             blog.date }} by
                             {{ blog.author }}</div>
@@ -201,6 +236,7 @@
 <style>
     body {
         font-family: 'Puritan', sans-serif;
+        user-select: none;
     }
 
     ::-webkit-scrollbar {
@@ -212,6 +248,21 @@
     }
 
     ::-webkit-scrollbar-thumb {
+        background: #000;
+    }
+
+    /**/
+    .content::-webkit-scrollbar {
+        width: 2px;
+        height: 1px;
+    }
+
+    .content::-webkit-scrollbar-track {
+        background: transparent;
+        width: 1px;
+    }
+
+    .content::-webkit-scrollbar-thumb {
         background: #000;
     }
 </style>

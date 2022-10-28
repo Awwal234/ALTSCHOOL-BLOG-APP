@@ -47,20 +47,6 @@
         </div>
         {% endif %}
         {% endwith %}
-        <!--begin for success-->
-        {% with success = get_flashed_messages(category_filter=["success"]) %}
-        {% if success %}
-        <div class="bg-[#4ade80] flex space-x-[10px] items-center p-[10px] text-[#fff] text-[14px] w-full md:w-[50%]">
-            <a class="close font-[600] text-[16px]" href="javascript:void(0)">×</a>
-            <div>
-                {%- for msg in success %}
-                <span>{{ msg }}</span>
-                {% endfor -%}
-            </div>
-        </div>
-        {% endif %}
-        {% endwith %}
-        <!--end for success-->
         <!--end messages-->
         <!--form-->
         <form action="{{ url_for('login') }}" method="POST" class="mt-[15px]">

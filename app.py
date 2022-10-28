@@ -75,7 +75,7 @@ def signup():
         user = User(name=name, email=email, password=password)
         db.session.add(user)
         db.session.commit()
-        
+
         flash('User created successfully', 'success')
         return redirect(url_for('login'))
     return render_template('signup.html')
@@ -91,7 +91,6 @@ def login():
         user = User.query.filter_by(email=email, password=password).first()
         if user:
             login_user(user)
-            flash('You were successfully logged in', 'success')
             return redirect(url_for('dashboard'))
         else:
             flash('Invalid credentials', 'error')
@@ -106,6 +105,11 @@ def login():
 def dashboard():
     user = current_user
     blogs = Post.query.all()
+    if user:
+        flash('You are successfully logged in', 'success')
+    else:
+        pass
+
     return render_template('dashboard.html', blogs=blogs, user=user)
 
 
@@ -130,6 +134,13 @@ def create(id):
     return render_template('createblog.html', user=user)
 
 
+# get blog by id
+@app.route('/blog/<int:id>')
+def blog(id):
+    blog = Post.query.filter_by(id=id).first()
+    return render_template('readmoreblog.html', blog=blog)
+
+
 @app.route('/logout')
 @login_required
 def logout():
@@ -149,6 +160,7 @@ def delete(id):
         db.session.commit()
         return redirect(url_for('dashboard', id=id))
     else:
+        flash('You are not authorized to delete this blog', 'error')
         return redirect(url_for('dashboard'))
 
 

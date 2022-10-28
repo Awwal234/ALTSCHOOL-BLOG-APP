@@ -24,13 +24,13 @@
         <form action="{{ url_for('update' ,id = blog.id) }}" method="POST">
             <div class="mt-[20px] font-[400] text-[14px] text-[#000]"><label for="title">Title</label></div>
             <div class="mt-[10px]">
-                <input type="text" name="title" id="title"
+                <input type="text" value="{{ blog.title }}" name="title" id="title"
                     class="w-full md:w-[50%] border-[1px] border-[#d6d3d1] rounded-[5px] py-[10px] px-[15px]">
             </div>
             <!--content-->
             <div class="mt-[20px] font-[400] text-[14px] text-[#000]"><label for="content">Content</label></div>
             <div class="mt-[10px]">
-                <textarea name="content" rows="6" id="content"
+                <textarea name="content" value="{{ blog.content }}" rows="6" id="content"
                     class="w-full md:w-[50%] border-[1px] border-[#d6d3d1] rounded-[5px]">
                 </textarea>
             </div>

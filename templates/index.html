@@ -58,9 +58,16 @@
                 <div
                     class="bg-[#f9fafb] h-[130px] mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-full md:w-[45%] rounded-[6px]">
                     <div class="font-[700] text-[15px] text-[#134e4a]">{{ blog.title }}</div>
-                    <div class="font-[500] text-[15px] text-[#000] mt-[10px]">{{ blog.content }}</div>
                     <div class="font-[500] text-[15px] text-[#134e4a] mt-[5px]">Created at: {{ blog.date }} by {{
                         blog.author }}</div>
+                    <div class="mt-[15px]">
+                        <a href="{{ url_for('blog', id=blog.id) }}">
+                            <button
+                                class="bg-teal-900 rounded-[5px] text-stone-300 w-fit text-center py-[6px] px-[20px]">Read
+                                more
+                            </button>
+                        </a>
+                    </div>
                 </div>
                 {% endfor %}
             </div>
