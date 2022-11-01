@@ -178,14 +178,14 @@
                 {% endif %}
                 {% endwith %}
                 <!--end failed deleted message-->
-                <div class="font-[700] text-[#000] text-[25px] md:text-[35px]">All User posts.</div>
+                <div class="font-[700] text-[#000] text-[25px] md:text-[35px]">User posts.</div>
                 <div class="font-[400] text-[#a8a29e] text-[12px] md:text-[15px]">Hey {{ user.name }}, you can only
                     place action on
                     your post and not others.</div>
                 <!--post-->
                 <div class="flex flex-row flex-wrap mt-[30px] items-center w-full">
-                    {% if user %}
                     {% for blog in blogs %}
+                    {% if user.name == blog.author %}
                     <div
                         class="bg-[#f9fafb] h-fit md:h-fit mt-[30px] ml-[10px] overflow-y-scroll p-[10px] shadow-lg w-full md:w-[45%] rounded-[6px]">
                         <div class="font-[700] text-[15px] text-[#134e4a]">{{ blog.title }}</div>
@@ -221,8 +221,8 @@
                         </div>
                         <!--added edit and delete button-->
                     </div>
-                    {% endfor %}
                     {% endif %}
+                    {% endfor %}
                 </div>
                 <!--end post-->
             </div>
