@@ -10,3 +10,11 @@
 project = 'blog application'
 print(project)
 ```
+
+### _What I learned during the process of building_
+
+<ul>
+    <li>Logical reasoning</li>
+    <li>Flask Authentication and Authorization</li>
+    <li>Jinja template</li>
+</ul>
