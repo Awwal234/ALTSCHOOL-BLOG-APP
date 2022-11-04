@@ -20,4 +20,4 @@ print(project)
 </ul>
 
 <br>
-[![Logo](/static/img/altschool.png "Altschool Logo")
+[![Logo]!] (/static/img/altschool.png "Altschool Logo")
