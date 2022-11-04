@@ -18,3 +18,6 @@ print(project)
     <li>Flask Authentication and Authorization</li>
     <li>Jinja template</li>
 </ul>
+
+<br>
+[![An old rock in the desert]('https://www.google.com/imgres?imgurl=https%3A%2F%2Fpbs.twimg.com%2Fext_tw_video_thumb%2F1511350894536839179%2Fpu%2Fimg%2FfSYyEzbiQfh6FyZ8.jpg%3Alarge&imgrefurl=https%3A%2F%2Ftwitter.com%2Faltschoolafrica%2Fstatus%2F1511350964976070667&tbnid=t0zEwf60PyKzGM&vet=12ahUKEwilgc-9-5P7AhWcpycCHeBVDb0QMygBegUIARC7AQ..i&docid=WOSdMx5va9SxbM&w=1280&h=720&q=altschol%20africa%20image%20logo&ved=2ahUKEwilgc-9-5P7AhWcpycCHeBVDb0QMygBegUIARC7AQ')](https://www.altschoolafrica.com)
