@@ -17,6 +17,12 @@
         <div class="flex justify-between w-[90%] items-center mx-auto md:w-[80%] lg:w-[80%]">
             <div class="font-[700] text-[21px]">BlogDaily</div>
             <div class="md:flex hidden space-x-[20px] justify-between items-center">
+                <a href="{{ url_for('about') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">About</div>
+                </a>
+                <a href="{{ url_for('contact') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">Contact</div>
+                </a>
                 <a href="{{ url_for('login') }}">
                     <div class="font-[500] cursor-pointer text-[16px]">Login</div>
                 </a>

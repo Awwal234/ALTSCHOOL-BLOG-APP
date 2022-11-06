@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Puritan:wght@400;700&display=swap" rel="stylesheet">
+    <title>{% block title %}BlogDaily - Contact{% endblock %}</title>
+</head>
+
+<body>
+    <header class="w-full fixed top-0 left-0 py-[20px] text-[#fff] bg-[#134e4a]">
+        <div class="flex justify-between w-[90%] items-center mx-auto md:w-[80%] lg:w-[80%]">
+            <div class="font-[700] text-[21px]">BlogDaily</div>
+            <div class="md:flex hidden space-x-[20px] justify-between items-center">
+                <a href="{{ url_for('about') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">About</div>
+                </a>
+                <a href="{{ url_for('contact') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">Contact</div>
+                </a>
+                <a href="{{ url_for('login') }}">
+                    <div class="font-[500] cursor-pointer text-[16px]">Login</div>
+                </a>
+                <a href={{ url_for('signup') }}>
+                    <div
+                        class="font-[700] cursor-pointer bg-[#047857] py-[8px] px-[15px] rounded-full w-fit text-[16px]">
+                        Create Account
+                    </div>
+                </a>
+            </div>
+            <!--mobile view drop-->
+            <!--end mobile view drop-->
+        </div>
+    </header>
+
+    <div class="mx-auto w-[90%] md:w-[80%] lg:w-[80%] mt-[130px]">
+        <form action="" class='md:w-[50%] w-full'>
+            <div class="font-[500] text-[13px]">Name:</div>
+            <div>
+                <input class="py-[5px] w-full border px-[12px]" placeholder="Enter your name"/>
+            </div>
+            <div class="font-[500] mt-[20px] text-[13px]">Message:</div>
+            <div>
+                <textarea class="py-[0px] text-top w-full h-[200px] border px-[12px]" placeholder="Enter your message"></textarea>
+            </div>
+            <button class="mt-[20px] px-[13px] py-[4px] rounded-[5px] bg-teal-800 text-[#fff] font-[600]">
+                Send
+            </button>
+        </form>
+    </div>
+</body>
+
+<style>
+    body {
+        font-family: 'Puritan', sans-serif;
+    }
+
+    ::-webkit-scrollbar {
+        width: 4px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: transparent;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #000;
+    }
+</style>
+</html>

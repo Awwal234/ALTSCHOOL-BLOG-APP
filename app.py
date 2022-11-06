@@ -56,6 +56,17 @@ def home():
     blogs = Post.query.all()
     return render_template('index.html', blogs=blogs)
 
+
+#route for about page
+@app.route('/about')
+def about():
+    return render_template('about.html')
+
+#route for contact page
+@app.route('/contact')
+def contact():
+    return render_template('contact.html')
+
 # route for signup
 
 
