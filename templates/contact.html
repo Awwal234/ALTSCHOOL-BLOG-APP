@@ -15,7 +15,9 @@
 <body>
     <header class="w-full fixed top-0 left-0 py-[20px] text-[#fff] bg-[#134e4a]">
         <div class="flex justify-between w-[90%] items-center mx-auto md:w-[80%] lg:w-[80%]">
-            <div class="font-[700] text-[21px]">BlogDaily</div>
+            <a href="{{ url_for('home') }}">
+                <div class="font-[700] text-[21px]">BlogDaily</div>
+            </a>
             <div class="md:flex hidden space-x-[20px] justify-between items-center">
                 <a href="{{ url_for('about') }}">
                     <div class="font-[500] cursor-pointer text-[16px]">About</div>
@@ -42,11 +44,12 @@
         <form action="" class='md:w-[50%] w-full'>
             <div class="font-[500] text-[13px]">Name:</div>
             <div>
-                <input class="py-[5px] w-full border px-[12px]" placeholder="Enter your name"/>
+                <input class="py-[5px] w-full border px-[12px]" placeholder="Enter your name" />
             </div>
             <div class="font-[500] mt-[20px] text-[13px]">Message:</div>
             <div>
-                <textarea class="py-[0px] text-top w-full h-[200px] border px-[12px]" placeholder="Enter your message"></textarea>
+                <textarea class="py-[0px] text-top w-full h-[200px] border px-[12px]"
+                    placeholder="Enter your message"></textarea>
             </div>
             <button class="mt-[20px] px-[13px] py-[4px] rounded-[5px] bg-teal-800 text-[#fff] font-[600]">
                 Send
@@ -72,4 +75,5 @@
         background: #000;
     }
 </style>
+
 </html>

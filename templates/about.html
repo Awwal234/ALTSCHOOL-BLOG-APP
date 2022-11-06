@@ -15,7 +15,9 @@
 <body>
     <header class="w-full fixed top-0 left-0 py-[20px] text-[#fff] bg-[#134e4a]">
         <div class="flex justify-between w-[90%] items-center mx-auto md:w-[80%] lg:w-[80%]">
-            <div class="font-[700] text-[21px]">BlogDaily</div>
+            <a href="{{ url_for('home') }}">
+                <div class="font-[700] text-[21px]">BlogDaily</div>
+            </a>
             <div class="md:flex hidden space-x-[20px] justify-between items-center">
                 <a href="{{ url_for('about') }}">
                     <div class="font-[500] cursor-pointer text-[16px]">About</div>
